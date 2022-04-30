@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Indigo shades
+$indigo-50: #e8eaf6;
+$indigo-100: #c5cae9;
+$indigo-200: #9fa8da;
+$indigo-300: #7986cb;
+$indigo-400: #5c6bc0;
+$indigo-500: #3f51b5;
+$indigo-600: #3949ab;
+$indigo-700: #303f9f;
+$indigo-800: #283593;
+$indigo-900: #1a237e;
+
+// Variables
+$main-color: $indigo-400;
+$light-main-color: $indigo-50;
+$dark-main-color: $indigo-800;
+$black: #1b1b1b;
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: aliceblue;
+}
+
+#root {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  padding: 1em 0 0.5em;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+  color: $dark-main-color;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .search {
+    label {
+      color: $black;
+      color: $dark-main-color;
+      font-weight: bold;
+    }
+    input {
+      outline: none;
+      padding: 3px 8px;
+      border-radius: 5px;
+      border: 1px solid $dark-main-color;
+      color: $indigo-900;
+    }
+  }
+}
+
+.btn {
+  border: 1px solid $dark-main-color;
+  border-radius: 10px;
+  padding: 3px 15px;
+  cursor: pointer;
+  color: $black;
+
+  &.update {
+    padding: 0.5em 1.5em;
+    background-color: $main-color;
+    color: white;
+
+    &:hover,
+    &:active {
+      background-color: $light-main-color;
+      border: 1px solid $main-color;
+      color: $dark-main-color;
+    }
+  }
+
+  &.delete {
+    border: 1px solid #e57373;
+  }
+  &.edit {
+    border: 1px solid #81c784;
+  }
+  &.cancel {
+    border: 1px solid #ffb74d;
+  }
+  &.save,
+  &.cancel {
+    padding: 3px 20px;
+  }
+}
+
+.tip {
+  font-size: 0.8rem;
+  margin: 3px 0;
+  color: $dark-main-color;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3em;
+  border-collapse: collapse;
+  color: $black;
+
+  td,
+  th {
+    border: 1px solid $indigo-100;
+    padding: 8px;
+  }
+
+  td .btn {
+    margin: 2px 4px;
+  }
+
+  tr:nth-child(even) {
+    background-color: $light-main-color;
+  }
+  tr:hover {
+    background-color: #c5cae988;
+  }
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: $main-color;
+    color: white;
+    cursor: pointer;
+    border: 1px solid $indigo-900;
+
+    &:hover {
+      background-color: $indigo-500;
+    }
+
+    &:last-child {
+      cursor: default;
+      &:hover {
+        background-color: $main-color;
+      }
+    }
+  }
+
+  input {
+    outline: none;
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid $dark-main-color;
+  }
+
+  .edit-column {
+    width: 20%;
+  }
+}
